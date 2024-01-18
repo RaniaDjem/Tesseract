@@ -1,0 +1,7 @@
+Flask
+opencv-python
+pytesseract
+numpy
+Pillow
+matplotlib
+deskew
