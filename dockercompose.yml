@@ -1,24 +1,27 @@
 version: '3'
 services:
-  microservice1: #Déposer l'image
-    image: votre_image_microservice1
+  microservice1:
+    image: service1:tag
     command: sh -c "./start.sh"
     depends_on:
       - shared_data
-  microservice2: #Prétraitement de l'image
-    image: votre_image_microservice2
+
+  microservice2:
+    image: service2:tag
     depends_on:
       - microservice1
       - shared_data
-  microservice3: #Interprétation du résultat 
-    image: votre_image_microservice3
+
+  microservice3:
+    image: service3:tag
     depends_on:
       - microservice2
       - shared_data
+
   shared_data:
     image: busybox
     volumes:
-      - shared_data:/chemin/dans/le/conteneur
+      - shared_data:/app/data
 
 volumes:
   shared_data:

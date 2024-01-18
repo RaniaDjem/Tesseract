@@ -5,9 +5,7 @@ FROM python:3.8
 WORKDIR /app
 
 # Copiez tous les fichiers Python nécessaires dans le conteneur
-COPY app1.py .
 COPY app2.py .
-COPY app3.py .
 COPY requirements.txt .
 
 # Installez les dépendances
@@ -17,4 +15,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Commande pour démarrer l'application
-CMD ["python", "app3.py"]
+CMD ["python", "app2.py"]
