@@ -108,9 +108,10 @@ def process_image():
     # prétraitement
     preprocessed_image = preprocess_image(image)
 
-    preprocessed_image.save('/shared_data/image2.jpg')
+    cv2.imwrite('/shared_data/image2.jpg', preprocessed_image)
+    #preprocessed_image.save('/shared_data/image2.jpg')
     # Retournez le résultat en tant que JSON (juste à titre d'exemple)
-    return jsonify({'result': 'success', 'preprocessed_image': preprocessed_image.tolist()})
+    return jsonify({'result': 'success', 'preprocessed_image': '/shared_data/image2.jpg'})
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
