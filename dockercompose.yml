@@ -2,7 +2,7 @@ version: '3'
 services:
   microservice1:
     image: service1:tag
-    command: sh -c "./start.sh"
+    #command: sh -c "./start.sh"
     depends_on:
       - shared_data
     volumes:
