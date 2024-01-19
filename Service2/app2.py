@@ -98,7 +98,7 @@ def preprocess_image(image):
 @app.route('/process_image', methods=['GET'])
 def process_image():
     # path vers l'img
-    image_path = '/shared_volume/image1.jpg'
+    image_path = '/shared_data/image1.jpg'
 
     image = cv2.imread(image_path)
 
