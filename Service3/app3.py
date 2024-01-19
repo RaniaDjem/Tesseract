@@ -48,7 +48,7 @@ def index():
 @app.route('/convert_to_text', methods=['POST'])
 def convert_image_to_text():
     try:
-        image_path = '/shared_volume/image2.jpg'
+        image_path = '/shared_data/image2.jpg'
         #uploaded_file = request.files['file']
         #if uploaded_file.filename != '':
         if image_path != '':
