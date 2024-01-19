@@ -98,7 +98,7 @@ def preprocess_image(image):
 @app.route('/process_image', methods=['GET'])
 def process_image():
     # path vers l'img
-    image_path = '-images.openfoodfacts.org-images-products-00000178-ingredients_en.17.400.jpg'
+    image_path = '/shared_data/image1.jpg'
 
     image = cv2.imread(image_path)
 
@@ -108,6 +108,7 @@ def process_image():
     # prétraitement
     preprocessed_image = preprocess_image(image)
 
+    preprocessed_image.save('/shared_data/image2.jpg')
     # Retournez le résultat en tant que JSON (juste à titre d'exemple)
     return jsonify({'result': 'success', 'preprocessed_image': preprocessed_image.tolist()})
 

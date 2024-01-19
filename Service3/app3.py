@@ -48,11 +48,14 @@ def index():
 @app.route('/convert_to_text', methods=['POST'])
 def convert_image_to_text():
     try:
-        uploaded_file = request.files['file']
-        if uploaded_file.filename != '':
+        image_path = '/shared_data/image2.jpg'
+        #uploaded_file = request.files['file']
+        #if uploaded_file.filename != '':
+        if image_path != '':
 
             #image = Image.open(uploaded_file)
-            image = np.array(Image.open(uploaded_file))
+            #image = np.array(Image.open(uploaded_file))
+            image = np.array(Image.open(image_path))
 
             #OCR without any preprocessing
             ocr_res = ocr(image)

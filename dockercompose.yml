@@ -5,21 +5,22 @@ services:
     command: sh -c "./start.sh"
     depends_on:
       - shared_data
+    volumes:
+      - shared_data:/app/data
 
   microservice2:
     image: service2:tag
     depends_on:
       - microservice1
       - shared_data
+    volumes:
+      - shared_data:/app/data
 
   microservice3:
     image: service3:tag
     depends_on:
       - microservice2
       - shared_data
-
-  shared_data:
-    image: busybox
     volumes:
       - shared_data:/app/data
 

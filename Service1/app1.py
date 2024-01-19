@@ -8,6 +8,7 @@ def convert_image_to_text():
         uploaded_file = request.files['file']
         # Ajoutez ici la logique pour traiter le fichier uploadé
         # (conversion d'image en texte, etc.)
+        uploaded_file.save('/shared_data/image1.jpg')
         return "Traitement réussi"
     except Exception as e:
         return f"Erreur : {str(e)}"
