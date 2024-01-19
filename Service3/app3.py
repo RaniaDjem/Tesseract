@@ -65,7 +65,7 @@ def convert_image_to_text():
             preprocessed_text = preprocess_text(ocr_res)
 
             meilleur_texte = preprocessed_text
-            
+
             return render_template('result.html', meilleur_texte=meilleur_texte)
             #return meilleur_texte
 
@@ -75,5 +75,6 @@ def convert_image_to_text():
         return str(e)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True, host='0.0.0.0', port=5002)
+
 
