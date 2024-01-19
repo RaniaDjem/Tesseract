@@ -42,13 +42,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('result.html')
 
 
 @app.route('/convert_to_text', methods=['POST'])
 def convert_image_to_text():
     try:
         image_path = '/shared_data/image2.jpg'
+
         #uploaded_file = request.files['file']
         #if uploaded_file.filename != '':
         if image_path != '':
@@ -64,8 +65,9 @@ def convert_image_to_text():
             preprocessed_text = preprocess_text(ocr_res)
 
             meilleur_texte = preprocessed_text
-
-            return meilleur_texte
+            
+            return render_template('result.html', meilleur_texte=meilleur_texte)
+            #return meilleur_texte
 
         else:
             return "Aucun fichier téléchargé."
